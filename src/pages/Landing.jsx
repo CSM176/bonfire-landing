@@ -77,7 +77,7 @@ export default function Home() {
     </Grid>
 </Grid>
         <Flex bgColor="bg.350" sx={{ boxShadow: "0px 2px 4px #000000", zIndex: "3"}} py="5vh" px="2vw" color="white" id="contact-section">
-            <Box width="60%" gap="1vh">
+            <Flex width="60%" gap="1vh" flexDir="column">
                 <Heading fontFamily="cocogoose" fontSize={{xl: "4rem", xxxl: "5.5rem"}}> ready to get started? </Heading>
                 <Text fontFamily="poppins" fontSize={{xl: "1.2rem", xxxl: "1.6rem"}}> To get started with a repair or sale, or just a general enquiry, tap the button to quickly start a chat with a staff member, or send us an email below. </Text>
                 <Button marginTop="1vw" colorScheme="highlight" gap="10px" onClick={handleMaximize} size={{xl: 'md', xxxl: "xl"}}> <Image src={chatbubble} h="80%"/> <Text> Start a chat </Text></Button>
@@ -85,7 +85,7 @@ export default function Home() {
                     <Text fontSize={{xl: "1.5rem", xxl: "2rem"}}> OR </Text> <Divider/>
                 </Flex>
                 <ContactCard page="/landing"/>
-            </Box>
+            </Flex>
         </Flex>
         <TawkMessengerReact propertyId="65c3674a0ff6374032ca3c01" widgetId="1hm1kmv9s" ref={tawkMessengerRef}/>
     </>
