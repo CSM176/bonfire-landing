@@ -40,10 +40,14 @@ export default function Home() {
                         {slides.map((index, thingy) => (                        
                         <>
                             <Hide above="sm">
-                                <Image src={mobileintro}/>
+                                <Image alt="Based in the Macedon Ranges, we provide computer repairs and custom computer builds for anyone, beginnner or expert. We guarantee the cheapest prices possible, and will beat any competitor price. 
+
+"src={mobileintro}/>
                             </Hide>
                             <Show above="sm">
-                                <Image src={introimg}/>
+                                <Image  alt="Based in the Macedon Ranges, we provide computer repairs and custom computer builds for anyone, beginnner or expert. We guarantee the cheapest prices possible, and will beat any competitor price. 
+
+" src={introimg}/>
                             </Show>
                         </>
                         )

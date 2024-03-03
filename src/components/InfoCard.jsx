@@ -20,7 +20,7 @@ export default function InfoCard(props) {
         offset={-70}
         duration={500}> click here for sales or repairs!</ScrollLink> </Link>   </Text>
         <Flex>
-          <Divider display="inline" orientation={{xl: "vertical"}} placeSelf="center" h="80%"></Divider>
+          <Divider display="inline" orientation={{base: "vertical", lg: "vertical"}} placeSelf="center" h="80%"></Divider>
         </Flex>
         <Heading color="white" maxW="20vw" fontSize={{base:"9vh", xl:"8vh", xxxl:"7vh"}} fontFamily="Cocogoose" fontWeight="400" marginLeft="2vw" height={{xl:"30vh", xxxl:"25vh"}}> website coming soon. <Image display="inline" src={hammer} height="20%"/> </Heading>
     </Flex>
