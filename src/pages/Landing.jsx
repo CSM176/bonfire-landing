@@ -40,14 +40,12 @@ export default function Home() {
                         {slides.map((index, thingy) => (                        
                         <>
                             <Hide above="sm">
-                                <Image alt="Based in the Macedon Ranges, we provide computer repairs and custom computer builds for anyone, beginnner or expert. We guarantee the cheapest prices possible, and will beat any competitor price. 
+                                <Image alt="Based in the Macedon Ranges, we provide computer repairs and custom computer builds for anyone, beginnner or expert. We guarantee the cheapest prices possible, and will beat any competitor price. We service the macedon ranges, including Kyenton, Macedon, Woodend, Gisborne, Riddells Creek, Lancefield, and even Sunbury!"
 
-"src={mobileintro}/>
+src={mobileintro}/>
                             </Hide>
                             <Show above="sm">
-                                <Image  alt="Based in the Macedon Ranges, we provide computer repairs and custom computer builds for anyone, beginnner or expert. We guarantee the cheapest prices possible, and will beat any competitor price. 
-
-" src={introimg}/>
+                                <Image  alt="Based in the Macedon Ranges, we provide computer repairs and custom computer builds for anyone, beginnner or expert. We guarantee the cheapest prices possible, and will beat any competitor price We service the macedon ranges, including Kyenton, Macedon, Woodend, Gisborne, Riddells Creek, Lancefield, and even Sunbury!"  src={introimg}/>
                             </Show>
                         </>
                         )
