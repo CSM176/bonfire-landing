@@ -15,48 +15,44 @@ export default function ContactCard(props) {
     <>
         <Text marginBottom="0.5vw" color="lightgray" fontSize={{xl: "1rem", xxxl: "1.3rem"}}> Send us an email (*required field)</Text>
         <Form method='post' action={props.page}>
-            <Grid templateColumns="1.5fr 3fr" columnGap="1vw" >
-                <FormControl marginBottom="1vw">
-                    <Input type="text" name="name" placeholder='Name*' variant="filled" backgroundColor="bg.200" size={{xl: "md", xxxl: "lg"}}/>
+            <Flex flexWrap="wrap" justify="space-between" columnGap="1vw" gap={{base:"1vh", lg:"0vw"}}>
+                <FormControl marginBottom="1vw" display="inline" maxWidth={{base:"100vw", lg:"49%"}}>
+                    <Input type="text" name="name" placeholder='Name*' variant="filled" backgroundColor="bg.200" size={{base:"md",xl: "md", xxxl: "lg"}}/>
                 </FormControl>
 
-                <FormControl isRequired marginBottom="1vw">
-                    <Input variant="filled" backgroundColor="bg.200" type="email" name="email" placeholder='Email*' size={{xl: "md", xxxl: "lg"}}/>
-                </FormControl>
-            </Grid>
-
-            <FormControl marginBottom="1vw">
-                <Select variant="filled" backgroundColor="bg.200" placeholder='What are you enquiring about?*' size={{xl: "md", xxxl: "lg"}} name='enquirytype'>
-                    <option  style={{backgroundColor: "black"}} value="sales"> Sales </option>
-                    <option style={{backgroundColor: "black"}} value="techsupport"> Technical Support </option>
-                    <option style={{backgroundColor: "black"}} value="repair"> Repair </option>
-                    <option style={{backgroundColor: "black"}} value="general"> General Enquiry </option>
-                </Select>
-            </FormControl>
-
-            <Grid templateColumns="1fr 3fr" columnGap="1vw">
-
-                <FormControl marginBottom="1vw">   
-                    <Input variant="filled" backgroundColor="bg.200" type="number" name="postcode" placeholder='Postcode' size={{xl: "md", xxxl: "lg"}}/>
+                <FormControl isRequired marginBottom="1vw" display="inline" maxWidth={{base:"100vw", lg:"49%"}}>
+                    <Input variant="filled" backgroundColor="bg.200" type="email" name="email" placeholder='Email*' size={{base:"md",xl: "md", xxxl: "lg"}}/>
                 </FormControl>
 
                 <FormControl marginBottom="1vw" >
-                    <Input variant="filled" backgroundColor="bg.200" type="number" name="phone" placeholder='Phone' size={{xl: "md", xxxl: "lg"}}/>
+                    <Select variant="filled" backgroundColor="bg.200" placeholder='What are you enquiring about?*' size={{base:"md",xl: "md", xxxl: "lg"}} name='enquirytype'>
+                        <option  style={{backgroundColor: "black"}} value="sales"> Sales </option>
+                        <option style={{backgroundColor: "black"}} value="techsupport"> Technical Support </option>
+                        <option style={{backgroundColor: "black"}} value="repair"> Repair </option>
+                        <option style={{backgroundColor: "black"}} value="general"> General Enquiry </option>
+                    </Select>
                 </FormControl>
 
 
-            </Grid>
+                <FormControl marginBottom="1vw" maxWidth={{base:"100vw", lg:"49%"}}>   
+                    <Input variant="filled" backgroundColor="bg.200" type="number" name="postcode" placeholder='Postcode' size={{base:"md",xl: "md", xxxl: "lg"}}/>
+                </FormControl>
 
-            <FormControl marginBottom="1vw">
-                <Textarea 
-                variant="filled" backgroundColor="bg.200"
-                placeholder='How can we help you?*'
-                name="message"
-                size={{xl: "md", xxxl: "lg"}}/>
-            </FormControl>
+                <FormControl marginBottom="1vw" maxWidth={{base:"100vw", lg:"49%"}}>
+                    <Input variant="filled" backgroundColor="bg.200" type="number" name="phone" placeholder='Phone' size={{base:"md",xl: "md", xxxl: "lg"}}/>
+                </FormControl>
 
 
-            <Button type="submit"  size={{xl: "md", xxxl: "lg"}} onSubmit={useToast({
+                <FormControl marginBottom="1vw">
+                    <Textarea 
+                    variant="filled" backgroundColor="bg.200"
+                    placeholder='How can we help you?*'
+                    name="message"
+                    size={{base:"md",xl: "md", xxxl: "lg"}}/>
+                </FormControl>
+
+
+            <Button type="submit"  size={{base:"md",xl: "md", xxxl: "lg"}} onSubmit={useToast({
                 title: 'Message sent.',
                 description: 'You should receive a confirmation email in 1-2 minutes.',
                 status: 'success',
@@ -65,6 +61,7 @@ export default function ContactCard(props) {
             })}>
                 Submit
             </Button>
+            </Flex>
         </Form>
     </>
   )

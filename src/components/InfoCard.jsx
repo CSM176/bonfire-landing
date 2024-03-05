@@ -8,21 +8,42 @@ import laptopicon from "../media/icons/laptop.png"
 import desktopicon from "../media/icons/desktop.png"
 import phoneicon from "../media/icons/phone.png"
 import hammer from "../media/icons/hammer.png"
+import { useBreakpointValue } from '@chakra-ui/react'
+import { Link as ReactRouterLink} from 'react-router-dom'
+
+// parameters: Subtitle, Bait, Linktext, Linkto, Title, Titleimg, Scrolllinkto, Button, Orientation, show divider
 
 export default function InfoCard(props) {
-
+  const orient = useBreakpointValue({base: "horizontal", lg: "vertical"})
 
   return (
-    <Flex backgroundColor="bg.300" p="4vh" gap="2vw" flexDir={{base: "column", lg:"row"}}>
-        <Text fontSize={{xl:"1.8rem", xxxl: "2.5rem"}} color="white" fontWeight="400" fontFamily="Cocogoose" placeSelf="center"> <Text as="span" fontWeight="600" fontSize="1.3em"> pardon our dust, </Text> we are currently developing our website to make custom builds, and repair requests, easy. We're still open for business, so <Link color="red"> <ScrollLink to="contact-section"
+    <Flex backgroundColor={props.bg} p="4vh" gap={{base: "3.5vh",lg:"2vw"}} flexDir={{base: "column-reverse", lg:props.orientation ? props.orientation : "row"}}>
+        { props.images && 
+        <Grid templateColumns={{base:('repeat(' + props.images.length + ', 1fr)'), lg:"1fr"}} maxH={{base:"15vh", xl:"35vh", xxl:"30vh"}} maxW={{base: "100vw", xl:"10vw"}}>
+            {props.images.map((image, index) =>
+            <Image src={image} maxH="80%" maxW={{base:100/(props.images.length-10) + "vw", lg:"10vw"}} objectFit="cover" placeSelf="center" /> 
+            )}
+        </Grid> }
+        <Show below='lg'>{props.button && <Button colorScheme='bg'> {props.button} </Button>}</Show>
+        <Text fontSize={{xl:"1.8rem", xxxl: "2.5rem"}} color="white" fontWeight="400" fontFamily="Cocogoose" placeSelf="center" textAlign={{base:"center", lg:"left"}}> <Text as="span" fontWeight="600" fontSize={{lg:"1.3em"}}> {props.subtitle} </Text> {props.children} {props.bait} <Show above='lg'> {props.scrolllinkto ? <Link color="red"> <ScrollLink to={props.scrolllinkto}
         spy={true}
         smooth={true}
         offset={-70}
-        duration={500}> click here for sales or repairs!</ScrollLink> </Link>   </Text>
+        duration={500}> {props.linktext}  </ScrollLink> </Link> : <Link as={ReactRouterLink} color="red" to={props.linkto}>{props.linktext}</Link> } </Show>   </Text>
+        <Show above='lg'>
         <Flex>
-          <Divider display="inline" orientation={{base: "vertical", lg: "vertical"}} placeSelf="center" h="80%"></Divider>
+          <Divider display="inline" orientation={orient} placeSelf="center" h="100%" color="red"/>
         </Flex>
-        <Heading color="white" maxW="20vw" fontSize={{base:"9vh", xl:"8vh", xxxl:"7vh"}} fontFamily="Cocogoose" fontWeight="400" marginLeft="2vw" height={{xl:"30vh", xxxl:"25vh"}}> website coming soon. <Image display="inline" src={hammer} height="20%"/> </Heading>
+        </Show>
+        { props.showDivider &&
+        <Show below='lg'>
+          <Flex>
+            <Divider display="inline" orientation={orient} placeSelf="center" h="100%" color="red"/>
+          </Flex>
+        </Show>
+        }
+        <Heading color="white" maxW={{base:"100vw",lg:"20vw"}} fontSize={{base:"5vh", xl:"8vh", xxxl:"7vh"}} fontFamily="Cocogoose" fontWeight="400" marginLeft="2vw" maxH={{base: "15vh", xl:"30vh", xxxl:"25vh"}} alignContent="center" textAlign={{base:"center", lg:"left"}}> {props.title} <Show above='lg'>{props.titleimg && <Image display="inline" src={props.titleimg} height="20%"/>}</Show> </Heading>
     </Flex>
+
   )
 }

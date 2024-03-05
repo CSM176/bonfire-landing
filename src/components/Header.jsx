@@ -1,11 +1,13 @@
-import { Button, Flex, Heading, Image, Container, background, Hide, useBreakpointValue, useMediaQuery } from '@chakra-ui/react'
+import { Button, Flex, Heading, Image, Container, background, Hide, useMediaQuery } from '@chakra-ui/react'
 import React, { Children } from 'react'
 import logo from '../media/bonfire-logo-light.png'
 import searchicon from "../media/search button.png"
 import shoppingcart from "../media/shoppingcart.png"
+import shoppingcartblack from "../media/shoppingcartblack.png"
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Link as ReactRouterLink} from 'react-router-dom'
 import hamburger from "../media/icons/hamburger.png"
+import { useBreakpointValue } from '@chakra-ui/react'
 
 const Content = () => {
     const location = useLocation()
@@ -22,7 +24,7 @@ const Content = () => {
     </Flex>
     <Flex h="100%" align="center" gap="0.5vw">
         <Button height="70%" colorScheme='bg'><Image h="60%" src={searchicon}/></Button>
-        <Button height="70%" backgroundColor="white"><Image h="60%" src={shoppingcart}/></Button>
+        <Button height="70%" backgroundColor="white"><Image h="60%" src={shoppingcartblack}/></Button>
     </Flex></> 
     
     :
