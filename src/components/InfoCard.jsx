@@ -15,6 +15,13 @@ import { Link as ReactRouterLink} from 'react-router-dom'
 
 export default function InfoCard(props) {
   const orient = useBreakpointValue({base: "horizontal", lg: "vertical"})
+  const scrollToPosition = () => {
+    const targetElementId = props.scrolllinkto
+    const targetElement = document.getElementById(targetElementId)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <Flex backgroundColor={props.bg} p="4vh" gap={{base: "3.5vh",lg:"2vw"}} flexDir={{base: "column-reverse", lg:props.orientation ? props.orientation : "row"}}>
@@ -24,7 +31,7 @@ export default function InfoCard(props) {
             <Image src={image} maxH="80%" maxW={{base:100/(props.images.length-10) + "vw", lg:"10vw"}} objectFit="cover" placeSelf="center" /> 
             )}
         </Grid> }
-        <Show below='lg'>{props.button && <Button colorScheme='bg'> {props.button} </Button>}</Show>
+        <Show below='lg'>{props.button && <Button colorScheme='bg' onClick={ props.scrolllinkto && scrollToPosition} as={ !props.scrolllinkto && ReactRouterLink} to={props.linkto}> {props.button} </Button>}</Show>
         <Text fontSize={{xl:"1.8rem", xxxl: "2.5rem"}} color="white" fontWeight="400" fontFamily="Cocogoose" placeSelf="center" textAlign={{base:"center", lg:"left"}}> <Text as="span" fontWeight="600" fontSize={{lg:"1.3em"}}> {props.subtitle} </Text> {props.children} {props.bait} <Show above='lg'> {props.scrolllinkto ? <Link color="red"> <ScrollLink to={props.scrolllinkto}
         spy={true}
         smooth={true}
