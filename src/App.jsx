@@ -8,9 +8,6 @@ import Landing from './pages/Landing'
 import ContactCard, { createAction } from './components/ContactCard'
 import Build from './pages/Build'
 
-import ReactGA from 'react-ga';
-const TRACKING_ID = "G-1RSXMC0X4R"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
 
 
 const router = createBrowserRouter(
@@ -29,10 +26,6 @@ const router = createBrowserRouter(
 
 
 function App() {
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
 
   return (
     <>
