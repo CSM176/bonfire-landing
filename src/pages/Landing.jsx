@@ -55,9 +55,9 @@ src={mobileintro}/>
                 </Carousel>    
             </Box>
         </Box>
-        <InfoCard bg="bg.300" subtitle="pardon our dust," bait="We're still open for business, so" linktext="click here for sales or repairs!" button="Click here for sales and repairs." title="website coming soon." titleimg={hammer} scrolllinkto="contact-section"> we are currently developing our website to make custom builds, and repair requests, easy. </InfoCard>
+        <InfoCard bg="bg.300" subtitle="pardon our dust," bait="We're still open for business, so" linktext="click here for sales or repairs!" button="Click here for sales and repairs." title="website coming soon." scrolllinkto="contact-section"> we are currently developing our website to make custom builds, and repair requests, easy. </InfoCard>
         <InfoCard orientation="row-reverse" bg="bg.200" subtitle="low cost and easy." linktext="Set up a drop off or pickup today." button="Set up a drop off or pickup today." title="looking for repairs?" scrolllinkto="contact-section" images={deviceicons}>  We guarantee cheapest fees in the area and will price match on request. We make it easy to repair anything, mobile, PC or laptop, and if we don't fix your problem, there's no fee. </InfoCard>
-        <Flex bgColor="bg.350" sx={{ boxShadow: "0px 2px 4px #000000", zIndex: "3"}} py="3vh" px="2vw" color="white" id="contact-section">
+        <Flex bgColor="bg.350" sx={{ boxShadow: "0px 2px 4px #000000", zIndex: "3"}} py="3vh" px="2vw" color="white" id="contact-section" justifyContent="center">
             <Flex width={{lg:"60%", base:"100%"}} gap="1vh" flexDir="column">
                 <Heading fontFamily="cocogoose" textAlign={{base:"center",lg:"left"}} fontSize={{base: "2.5rem", xl: "4rem", xxxl: "5.5rem"}}> ready to get started? </Heading>
                 <Text fontFamily="poppins" fontSize={{xl: "1.2rem", xxxl: "1.6rem"}} textAlign={{base: "center", lg:"left"}}> To get started with a repair or sale, or just a general enquiry, tap the button to quickly start a chat with a staff member, or send us an email below. </Text>

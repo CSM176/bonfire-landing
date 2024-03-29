@@ -24,7 +24,7 @@ export default function InfoCard(props) {
   }
 
   return (
-    <Flex backgroundColor={props.bg} p="4vh" gap={{base: "3.5vh",lg:"2vw"}} flexDir={{base: "column-reverse", lg:props.orientation ? props.orientation : "row"}}>
+    <Flex backgroundColor={props.bg} p="4vh" paddingX={{lg:"20vw"}} gap={{base: "3.5vh",lg:"2vw"}} flexDir={{base: "column-reverse", lg:props.orientation ? props.orientation : "row"}}>
         { props.images && 
         <Grid templateColumns={{base:('repeat(' + props.images.length + ', 1fr)'), lg:"1fr"}} maxH={{base:"15vh", xl:"35vh", xxl:"30vh"}} maxW={{base: "100vw", xl:"10vw"}}>
             {props.images.map((image, index) =>
@@ -32,7 +32,7 @@ export default function InfoCard(props) {
             )}
         </Grid> }
         <Show below='lg'>{props.button && <Button colorScheme='bg' onClick={ props.scrolllinkto && scrollToPosition} as={ !props.scrolllinkto && ReactRouterLink} to={props.linkto}> {props.button} </Button>}</Show>
-        <Text fontSize={{xl:"1.8rem", xxxl: "2.5rem"}} color="white" fontWeight="400" fontFamily="Cocogoose" placeSelf="center" textAlign={{base:"center", lg:"left"}}> <Text as="span" fontWeight="600" fontSize={{lg:"1.3em"}}> {props.subtitle} </Text> {props.children} {props.bait} <Show above='lg'> {props.scrolllinkto ? <Link color="red"> <ScrollLink to={props.scrolllinkto}
+        <Text fontSize={{xl:"1.5rem", xxxl: "1.8rem"}} color="white" fontWeight="400" fontFamily="Cocogoose" placeSelf="center" textAlign={{base:"center", lg:"left"}}> <Text as="span" fontWeight="600" fontSize={{lg:"1.3em"}}> {props.subtitle} </Text> {props.children} {props.bait} <Show above='lg'> {props.scrolllinkto ? <Link color="red"> <ScrollLink to={props.scrolllinkto}
         spy={true}
         smooth={true}
         offset={-70}
@@ -49,7 +49,7 @@ export default function InfoCard(props) {
           </Flex>
         </Show>
         }
-        <Heading color="white" maxW={{base:"100vw",lg:"20vw"}} fontSize={{base:"5vh", xl:"8vh", xxxl:"7vh"}} fontFamily="Cocogoose" fontWeight="400" marginLeft="2vw" maxH={{base: "15vh", xl:"30vh", xxxl:"25vh"}} alignContent="center" textAlign={{base:"center", lg:"left"}}> {props.title} <Show above='lg'>{props.titleimg && <Image display="inline" src={props.titleimg} height="20%"/>}</Show> </Heading>
+        <Heading color="white" maxW={{base:"100vw",lg:"20vw"}} fontSize={{base:"5vh", xl:"8vh", xxxl:"6vh"}} fontFamily="Cocogoose" fontWeight="400" maxH={{base: "15vh", xl:"30vh", xxxl:"25vh"}} alignContent="center" textAlign={{base:"center", lg:"left"}} placeSelf="center" > {props.title} <Show above='lg'>{props.titleimg && <Image display="inline" src={props.titleimg} height="20%"/>}</Show> </Heading>
     </Flex>
 
   )
