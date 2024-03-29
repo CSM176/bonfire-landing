@@ -9,7 +9,7 @@ import ContactCard, { createAction } from './components/ContactCard'
 import Build from './pages/Build'
 
 import ReactGA from 'react-ga';
-const TRACKING_ID = "G-X5DNMCLFLB"; // OUR_TRACKING_ID
+const TRACKING_ID = "G-1RSXMC0X4R"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
 
