@@ -47,7 +47,7 @@ const navNames = ["home" , "build"]
 export default function Header2() {
 
   return (
-      <Flex justify="space-between" align="center" height={{ base:"25vw", xl:"8vw", xxl:"6.5vw", xxxl: "5vw"}} bgColor="bg.400" px="3vw" position="sticky" top="0" zIndex="3" sx={{ boxShadow: "0px 2px 4px #000000" }}>
+      <Flex justify="space-between" align="center" height={{ base:"25vw", xl:"7vw", xxl:"6vw", xxxl: "4vw"}} bgColor="bg.400" px="3vw" position="sticky" top="0" zIndex="3" sx={{ boxShadow: "0px 2px 4px #000000" }}>
         <Content />
       </Flex>
   )

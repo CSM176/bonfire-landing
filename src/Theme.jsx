@@ -9,6 +9,7 @@ const theme = extendTheme({
     },
     colors: {
         bg: {
+            1000: "#BDBDBD",
             900: "#717171",
             800: "#717171",
             700: "#555555",

@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound'
 import Landing from './pages/Landing'
 import ContactCard, { createAction } from './components/ContactCard'
 import Build from './pages/Build'
+import Builder from './pages/Builder'
 
 
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path='contactcard' element={<ContactCard />} />
       <Route path="about" element={<About />} />
       <Route path="build" element={<Build />} />
+      <Route path="builder" element={<Builder />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
